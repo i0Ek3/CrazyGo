@@ -43,4 +43,4 @@ Ceph 是一个分布式文件存储系统，由 Sage Weil 在 UCSC 提出。
 - [https://zhuanlan.zhihu.com/p/34188712](https://zhuanlan.zhihu.com/p/34188712)
 - [https://blog.csdn.net/yuxin6866/article/details/79451006](https://blog.csdn.net/yuxin6866/article/details/79451006)
 - [http://www.xuxiaopang.com/2016/11/08/easy-ceph-CRUSH/](http://www.xuxiaopang.com/2016/11/08/easy-ceph-CRUSH/)
-
+- [https://zhangchenchen.github.io/2016/12/20/ceph-command-1/](https://zhangchenchen.github.io/2016/12/20/ceph-command-1/)

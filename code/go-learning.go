@@ -267,6 +267,8 @@ func slice_literals() {
 
 	num := []int{1, 2, 3, 4, 5, 6}
 	fmt.Println(num)
+	num = append(num, 7, 8, 9)
+	fmt.Println(num)
 
 	s1 := num[:]
 	fmt.Printf("len(s1) = %v, cap(s1) = %v, s1 = %v\n", len(s1), cap(s1), s1)
@@ -283,10 +285,167 @@ func slice_literals() {
 	//d_2 := [][]int{1, 2, 3, 4, 5, 6, 8}
 	//d_ := make([]string, "0")
 	//fmt.Println(d_)
+
+	// nil slice
+	var nil_slice []int
+	fmt.Printf("nil_slice = %v, len(nil_slice) = %v, cap(nil_slice) = %v", nil_slice, len(nil_slice), cap(nil_slice))
+	if nil_slice == nil {
+		fmt.Println("\nError here!")
+	}
+
+	// use make to create dynamic array
+	new_slice := make([]int, 2, 5) // if you not specific third argument, it will not show you cap of this slice
+	//new_slice := make([]int, 2) // it will show you [0 0]
+	fmt.Println(new_slice, len(new_slice), cap(new_slice))
+
+	new_slice1 := new_slice[0:1]
+	fmt.Println(new_slice1)
+
+	// slice of slice
+	ss := [][]string{
+		[]string{"slice", "of", "slice"},
+		[]string{"slice", "of", "slice"},
+		[]string{"slice", "of", "slice"},
+		[]string{"slice", "of", "slice"},
+	}
+	fmt.Println(ss, len(ss), cap(ss))
+
+	ss[0][0] = "X"
+	ss[0][1] = "X"
+	ss[1][0] = "X"
+	ss[1][1] = "X"
+	fmt.Println(ss, len(ss), cap(ss))
+
+	// range for
+	for i, v := range num {
+		fmt.Printf("i = %d, v = %d\n", i, v)
+	}
+	// if you just want one argument in range, just ignore the another one,  or you can use _ to subsititude it
+	for i, _ := range num {
+		fmt.Println("i = ", i)
+	}
+	for _, v := range num {
+		fmt.Println("v = ", v)
+	}
+	//for i := range num {}
+}
+
+type T struct {
+	i int
+	b bool
+}
+
+// map:
+// map[key_type]value_type
+func maptaion() {
+	var m map[string]T
+	m = make(map[string]T)
+	m["hello"] = T{
+		1, false,
+	}
+	fmt.Println("Before modified, m = ", m)
+	fmt.Println(m["hello"])
+	m["hello"] = T{
+		0, true,
+	}
+	fmt.Println("After modified, m = ", m)
+	fmt.Println(m["hello"])
+
+	var m1 = map[int]string{
+		1: "hello",
+		2: "word",
+	}
+	fmt.Println(m1)
+
+	/*
+		v, ok := m1["hello"]
+		if v == nil {
+			fmt.Println("Error!\n")
+		} else {
+			fmt.Println("v = \n", v)
+		}*/
+
+	var m2 = map[int]T{
+		0: {1, true},
+	}
+	fmt.Println(m2)
+}
+
+// the function just a value, but it's hard to comperhension for me
+func functor(fn func(int, int) int) int {
+	return fn(3, 4) * 3
+}
+
+func closure() func(int) int {
+	sum := 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+type P struct {
+	X, Y int
+}
+
+// method
+// method is function, and belows equivalent this: func Product(p P) int {}
+// cannot declare a method for the builtin type in Go and position in the different package
+func (p P) Product() int {
+	return p.X * p.Y
+}
+
+func (p *P) Interaction() {
+	p.X = p.X + p.Y
+	p.Y = p.X
+}
+
+// equivalent Interaction() above
+//func Interaction(p *P) {}
+
+type I interface {
+	M()
+}
+
+type T_ struct {
+	S string
+}
+
+func (t_ T_) M() {
+	fmt.Println(t_.S)
 }
 
 func main() {
-	slice_literals()
+	var i interface{} = "hello"
+	//t := i.(T)
+	t, ok := i.(string)
+	fmt.Printf("%v %T\n", t, ok)
+	//interface_test
+	/*var i I = T_{"interface"}
+	i.M()
+
+		p := P{2, 6}
+		p.Interaction()
+		fmt.Println(p.Product())
+		/*
+		//closure
+		/*
+			a, b := closure(), closure()
+			for i := 0; i < 10; i++ {
+				fmt.Println(
+					a(i),
+					b(-i),
+				)
+			}*/
+	/* function
+	functor_ := func(x, y int) int {
+		return x * y
+	}
+	fmt.Println(functor_(1, 2))
+	fmt.Println(functor(functor_))
+	*/
+	//maptaion()
+	//slice_literals()
 	/*
 		com := []struct {
 			i int
