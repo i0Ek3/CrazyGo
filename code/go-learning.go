@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"runtime"
+	"time"
 )
 
 func add_(x int, y int) int {
@@ -415,28 +416,132 @@ func (t_ T_) M() {
 	fmt.Println(t_.S)
 }
 
-func main() {
-	var i interface{} = "hello"
-	//t := i.(T)
-	t, ok := i.(string)
-	fmt.Printf("%v %T\n", t, ok)
-	//interface_test
-	/*var i I = T_{"interface"}
-	i.M()
+// Goruntine
+func say(s string) {
+	for i := 0; i < 5; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println(s)
+	}
+}
 
-		p := P{2, 6}
-		p.Interaction()
-		fmt.Println(p.Product())
-		/*
-		//closure
-		/*
-			a, b := closure(), closure()
+// Go channel
+func sum_chan(s []int, c chan int) {
+	sum := 0
+	for _, v := range s {
+		sum += v
+	}
+	c <- sum
+}
+
+func chan_buffer() {
+	ch := make(chan int, 3)
+	ch <- 1
+	ch <- 2
+	//ch <- 3
+	//ch <- 4
+	fmt.Println(ch)
+	fmt.Println(ch)
+	//fmt.Println(ch)
+	//fmt.Println(ch)
+}
+
+func chan_close(n int, ch chan int) {
+	x, y := 0, 1
+	for i := 0; i < n; i++ {
+		ch <- x
+		x, y = y, x+y
+	}
+	close(ch) // only you ensure you needn't transfer data to chan then close chan by sender
+}
+
+func select_test(c, quit chan int) {
+	x, y := 0, 1
+	for {
+		select {
+		case c <- x:
+			x, y = y, x+y
+		case <-quit:
+			fmt.Println("Quit")
+			return
+		}
+	}
+}
+
+func select_default() {
+	tick := time.Tick(100 * time.Millisecond)
+	boom := time.After(500 * time.Millisecond)
+	for {
+		select {
+		// from here I just have one question: tick and boom not a chan type, why did they can use <- ?
+		case <-tick:
+			fmt.Println("tick.")
+		case <-boom:
+			fmt.Println("boom")
+			return
+		default:
+			fmt.Println("	.")
+			time.Sleep(50 * time.Millisecond)
+		}
+	}
+}
+
+func main() {
+	// chan
+	select_default()
+	/*
+		c := make(chan int)
+		quit := make(chan int)
+		go func() {
 			for i := 0; i < 10; i++ {
-				fmt.Println(
-					a(i),
-					b(-i),
-				)
-			}*/
+				fmt.Println(<-c)
+			}
+			quit <- 0
+		}()
+		select_test(c, quit)
+	*/
+
+	/*
+
+		ch := make(chan int, 10)
+		go chan_close(cap(ch), ch)
+		for i := range ch {
+			fmt.Println(i)
+		}*/
+	//chan_buffer()
+	/*
+		s := []int{1, 2, 3, 4, 5, 6, 7}
+		c := make(chan int)
+		go sum_chan(s[:len(s)/2], c)
+		go sum_chan(s[len(s)/2:], c)
+		x, y := <-c, <-c
+		fmt.Println(x, y, x+y)
+	*/
+	/*
+		go say("word") // the result of every exec is different
+			say("hello")
+			/*
+				var i interface{} = "hello"
+				//t := i.(T)
+				t, ok := i.(string)
+				fmt.Printf("%v %T\n", t, ok)
+				/*
+				//interface_test
+				/*var i I = T_{"interface"}
+				i.M()
+
+					p := P{2, 6}
+					p.Interaction()
+					fmt.Println(p.Product())
+					/*
+					//closure
+					/*
+						a, b := closure(), closure()
+						for i := 0; i < 10; i++ {
+							fmt.Println(
+								a(i),
+								b(-i),
+							)
+						}*/
 	/* function
 	functor_ := func(x, y int) int {
 		return x * y
