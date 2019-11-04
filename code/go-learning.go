@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	//"reflect"
 	"runtime"
 	"time"
 )
@@ -144,10 +145,14 @@ func test_func() {
 
 func defer_test() {
 	// the order of defer execute just like C++ the order of desconstructor.
+	// and the defer will parse the argument by real time
+	var j int = 1
+	defer fmt.Println("--> ", func() int { return j * j }()) // ouput 1 rather than 4
+	j++
 
+	defer fmt.Printf("!!")
+	defer fmt.Printf("Word")
 	fmt.Printf("Hello ")
-	defer fmt.Printf("Word!")
-	fmt.Printf("Go ")
 
 	fmt.Println("Starting...")
 	for i := 0; i < 10; i++ {
@@ -485,19 +490,81 @@ func select_default() {
 	}
 }
 
+// struct go tag
+// tag need reflect to read
+// of course key:value also can represent tag
+// Tag always use on marshaling
+// Ref: https://juejin.im/post/5b338516f265da596e4ceb9e
+type Tag struct {
+	f1 string "f one"
+	f2 string `two:"2"` // you can use Lookup and Get to fetch the value of this key-value pair
+	f3 string `f three`
+}
+
+// callback function
+func callback(i int, f func(int, int)) {
+	f(i, 2)
+}
+
+func pro(i, j int) {
+	fmt.Println("i * j = ", i*j)
+}
+
+// unnamed fucntion
+//func(x, y int) int {
+//	return x + y
+//}
+
+func(x, y int) int {
+    return x + y
+}() // () represent call this function directionly
+
+
+// calculate from 1 to 1000000
+func() {
+    sum := 0
+    for i := 1; i <= 1e6; i++ {
+	sum += i
+    }
+}()
+
 func main() {
-	// chan
-	select_default()
+
+
+	// unnamed func
+	fv := func(x, y int) int {
+		fmt.Println(x + y)
+		return x + y
+	}
+	fv(3, 4)
 	/*
-		c := make(chan int)
-		quit := make(chan int)
-		go func() {
-			for i := 0; i < 10; i++ {
-				fmt.Println(<-c)
-			}
-			quit <- 0
-		}()
-		select_test(c, quit)
+		//callback
+		callback(1, pro)
+		/*
+		/*
+			// tag & reflect
+			t := reflect.TypeOf(Tag{})
+			f1, _ := t.FieldByName("f1")
+			fmt.Printf("%q\n", f1.Tag)
+			f2, _ := t.FieldByName("f2")
+			fmt.Println(f2.Tag)
+			v, ok := f2.Tag.Lookup("two")
+			fmt.Printf("%s, %t\n", v, ok)
+			f3, _ := t.FieldByName("f3")
+			fmt.Printf("%q\n", f3.Tag)
+			/*
+			// chan
+			//select_default()
+			/*
+				c := make(chan int)
+				quit := make(chan int)
+				go func() {
+					for i := 0; i < 10; i++ {
+						fmt.Println(<-c)
+					}
+					quit <- 0
+				}()
+				select_test(c, quit)
 	*/
 
 	/*

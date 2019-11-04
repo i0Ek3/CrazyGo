@@ -1,0 +1,99 @@
+2019/11/04 16:10:02.904 [log.go:172]  this is a msg of HTTP
+2019/11/04 16:10:02.904 [log.go:172]  [HTTP] this is a msg of HTTP
+2019/11/04 16:10:02.904 [log.go:172]  [ORM] this is a msg of ORM
+2019/11/04 16:10:02.904 [D] [log.go:634]  This is Debug level log!
+2019/11/04 16:10:02.904 [A] [log.go:594]  This is Alert level log!
+2019/11/04 16:10:02.904 [I] [log.go:629]  This is Inof level log!
+2019/11/04 16:10:02.904 [W] [log.go:614]  This is Warn level log!
+2019/11/04 16:10:02.904 [E] [log.go:604]  This is Error level log
+2019/11/04 16:10:02.904 [C] [log.go:599]  This is Critical level log!
+2019/11/04 17:41:14.495 [log.go:172]  this is a msg of HTTP
+2019/11/04 17:41:14.495 [log.go:172]  [HTTP] this is a msg of HTTP
+2019/11/04 17:41:14.495 [log.go:172]  [ORM] this is a msg of ORM
+2019/11/04 17:41:14.495 [D] [log.go:634]  This is Debug level log!
+2019/11/04 17:41:14.495 [A] [log.go:594]  This is Alert level log!
+2019/11/04 17:41:14.495 [I] [log.go:629]  This is Inof level log!
+2019/11/04 17:41:14.495 [W] [log.go:614]  This is Warn level log!
+2019/11/04 17:41:14.495 [E] [log.go:604]  This is Error level log
+2019/11/04 17:41:14.495 [C] [log.go:599]  This is Critical level log!
+2019/11/04 17:41:14.495 [M] [log.go:589]  This is Emergency level log!
+2019/11/04 17:41:14.495 [N] [log.go:619]  This is Notice level log!
+2019/11/04 17:41:52.907 [log.go:172]  this is a msg of HTTP
+2019/11/04 17:41:52.907 [log.go:172]  [HTTP] this is a msg of HTTP
+2019/11/04 17:41:52.908 [log.go:172]  [ORM] this is a msg of ORM
+2019/11/04 17:41:52.908 [D] [log.go:634]  This is Debug level log!
+2019/11/04 17:41:52.908 [A] [log.go:594]  This is Alert level log!
+2019/11/04 17:41:52.908 [I] [log.go:629]  This is Inof level log!
+2019/11/04 17:41:52.908 [W] [log.go:614]  This is Warn level log!
+2019/11/04 17:41:52.908 [E] [log.go:604]  This is Error level log
+2019/11/04 17:41:52.908 [C] [log.go:599]  This is Critical level log!
+2019/11/04 17:41:52.908 [M] [log.go:589]  This is Emergency level log!
+2019/11/04 17:41:52.908 [N] [log.go:619]  This is Notice level log!
+2019/11/04 17:41:57.313 [log.go:172]  this is a msg of HTTP
+2019/11/04 17:41:57.313 [log.go:172]  [HTTP] this is a msg of HTTP
+2019/11/04 17:41:57.314 [log.go:172]  [ORM] this is a msg of ORM
+2019/11/04 17:41:57.314 [D] [log.go:634]  This is Debug level log!
+2019/11/04 17:41:57.314 [A] [log.go:594]  This is Alert level log!
+2019/11/04 17:41:57.314 [I] [log.go:629]  This is Inof level log!
+2019/11/04 17:41:57.314 [W] [log.go:614]  This is Warn level log!
+2019/11/04 17:41:57.314 [E] [log.go:604]  This is Error level log
+2019/11/04 17:41:57.314 [C] [log.go:599]  This is Critical level log!
+2019/11/04 17:41:57.314 [M] [log.go:589]  This is Emergency level log!
+2019/11/04 17:41:57.314 [N] [log.go:619]  This is Notice level log!
+2019/11/04 17:42:09.611 [log.go:172]  this is a msg of HTTP
+2019/11/04 17:42:09.611 [log.go:172]  [HTTP] this is a msg of HTTP
+2019/11/04 17:42:09.611 [log.go:172]  [ORM] this is a msg of ORM
+2019/11/04 17:42:09.611 [D] [log.go:634]  This is Debug level log!
+2019/11/04 17:42:09.611 [A] [log.go:594]  This is Alert level log!
+2019/11/04 17:42:09.611 [I] [log.go:629]  This is Inof level log!
+2019/11/04 17:42:09.611 [W] [log.go:614]  This is Warn level log!
+2019/11/04 17:42:09.611 [E] [log.go:604]  This is Error level log
+2019/11/04 17:42:09.611 [C] [log.go:599]  This is Critical level log!
+2019/11/04 17:42:09.611 [M] [log.go:589]  This is Emergency level log!
+2019/11/04 17:42:09.611 [N] [log.go:619]  This is Notice level log!
+2019/11/04 17:43:23.756 [log.go:172]  this is a msg of HTTP
+2019/11/04 17:43:23.756 [log.go:172]  [HTTP] this is a msg of HTTP
+2019/11/04 17:43:23.756 [log.go:172]  [ORM] this is a msg of ORM
+2019/11/04 17:43:23.756 [D] [log.go:634]  This is Debug level log!
+2019/11/04 17:43:23.756 [A] [log.go:594]  This is Alert level log!
+2019/11/04 17:43:23.756 [I] [log.go:629]  This is Inof level log!
+2019/11/04 17:43:23.756 [W] [log.go:614]  This is Warn level log!
+2019/11/04 17:43:23.757 [E] [log.go:604]  This is Error level log
+2019/11/04 17:43:23.757 [C] [log.go:599]  This is Critical level log!
+2019/11/04 17:43:23.757 [M] [log.go:589]  This is Emergency level log!
+2019/11/04 17:43:23.757 [N] [log.go:619]  This is Notice level log!
+2019/11/04 17:43:23.757 [I] [log.go:624]  This informational! 
+2019/11/04 17:48:05.141 [log.go:172]  this is a msg of HTTP
+2019/11/04 17:48:05.141 [log.go:172]  [HTTP] this is a msg of HTTP
+2019/11/04 17:48:05.141 [log.go:172]  [ORM] this is a msg of ORM
+2019/11/04 17:48:05.141 [D] [log.go:634]  This is Debug level log!
+2019/11/04 17:48:05.141 [A] [log.go:594]  This is Alert level log!
+2019/11/04 17:48:05.141 [I] [log.go:629]  This is Inof level log!
+2019/11/04 17:48:05.141 [W] [log.go:614]  This is Warn level log!
+2019/11/04 17:48:05.141 [E] [log.go:604]  This is Error level log
+2019/11/04 17:48:05.141 [C] [log.go:599]  This is Critical level log!
+2019/11/04 17:48:05.141 [M] [log.go:589]  This is Emergency level log!
+2019/11/04 17:48:05.141 [N] [log.go:619]  This is Notice level log!
+2019/11/04 17:48:05.141 [I] [log.go:624]  This informational! 
+2019/11/04 17:50:18.201 [log.go:172]  this is a msg of HTTP
+2019/11/04 17:50:18.201 [log.go:172]  [HTTP] this is a msg of HTTP
+2019/11/04 17:50:18.201 [log.go:172]  [ORM] this is a msg of ORM
+2019/11/04 17:50:18.201 [A] [log.go:594]  This is Alert level log!
+2019/11/04 17:50:18.201 [I] [log.go:629]  This is Inof level log!
+2019/11/04 17:50:18.201 [W] [log.go:614]  This is Warn level log!
+2019/11/04 17:50:18.201 [E] [log.go:604]  This is Error level log
+2019/11/04 17:50:18.201 [C] [log.go:599]  This is Critical level log!
+2019/11/04 17:50:18.201 [M] [log.go:589]  This is Emergency level log!
+2019/11/04 17:50:18.201 [N] [log.go:619]  This is Notice level log!
+2019/11/04 17:50:18.201 [I] [log.go:624]  This informational! 
+2019/11/04 17:51:55.536 [beego-log.go:17]  this is a msg of HTTP
+2019/11/04 17:51:55.536 [beego-log.go:18]  [HTTP] this is a msg of HTTP
+2019/11/04 17:51:55.536 [beego-log.go:19]  [ORM] this is a msg of ORM
+2019/11/04 17:51:55.536 [A] [proc.go:203]  This is Alert level log!
+2019/11/04 17:51:55.536 [I] [proc.go:203]  This is Inof level log!
+2019/11/04 17:51:55.536 [W] [proc.go:203]  This is Warn level log!
+2019/11/04 17:51:55.536 [E] [proc.go:203]  This is Error level log
+2019/11/04 17:51:55.536 [C] [proc.go:203]  This is Critical level log!
+2019/11/04 17:51:55.537 [M] [proc.go:203]  This is Emergency level log!
+2019/11/04 17:51:55.537 [N] [proc.go:203]  This is Notice level log!
+2019/11/04 17:51:55.537 [I] [beego-log.go:36]  This informational! 
