@@ -1,10 +1,6 @@
-# xsky
+# Crazy Go.
 
-> Make Data Alive.
-
-The work flow while I worked at XSKY.
-
-This repo will record something about I worked at XSKY what I learned in daily work flows.
+> Cool stuff with Go.
 
 - [doc](#doc)
 - [code](#code)
