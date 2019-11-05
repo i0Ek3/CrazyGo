@@ -515,11 +515,13 @@ func pro(i, j int) {
 //	return x + y
 //}
 
+/*
 func(x, y int) int {
     return x + y
 }() // () represent call this function directionly
+*/
 
-
+/*
 // calculate from 1 to 1000000
 func() {
     sum := 0
@@ -527,44 +529,59 @@ func() {
 	sum += i
     }
 }()
+*/
+
+// more details about go struct please visit https://juejin.im/post/5ca2f37ce51d4502a27f0539
+type M struct {
+	Name string
+	Age  int
+}
 
 func main() {
+	var m1 *M
+	m1 = &M{}
+	m1.Name = "Lisa"
+	fmt.Println("m1.Name = ", m1.Name)
 
+	var m2 = new(M)
+	m2.Age = 20
+	fmt.Println("m2.Age = ", m2.Age)
 
-	// unnamed func
-	fv := func(x, y int) int {
-		fmt.Println(x + y)
-		return x + y
-	}
-	fv(3, 4)
 	/*
-		//callback
-		callback(1, pro)
+		// unnamed func
+		fv := func(x, y int) int {
+			fmt.Println(x + y)
+			return x + y
+		}
+		fv(3, 4)
 		/*
-		/*
-			// tag & reflect
-			t := reflect.TypeOf(Tag{})
-			f1, _ := t.FieldByName("f1")
-			fmt.Printf("%q\n", f1.Tag)
-			f2, _ := t.FieldByName("f2")
-			fmt.Println(f2.Tag)
-			v, ok := f2.Tag.Lookup("two")
-			fmt.Printf("%s, %t\n", v, ok)
-			f3, _ := t.FieldByName("f3")
-			fmt.Printf("%q\n", f3.Tag)
+			//callback
+			callback(1, pro)
 			/*
-			// chan
-			//select_default()
 			/*
-				c := make(chan int)
-				quit := make(chan int)
-				go func() {
-					for i := 0; i < 10; i++ {
-						fmt.Println(<-c)
-					}
-					quit <- 0
-				}()
-				select_test(c, quit)
+				// tag & reflect
+				t := reflect.TypeOf(Tag{})
+				f1, _ := t.FieldByName("f1")
+				fmt.Printf("%q\n", f1.Tag)
+				f2, _ := t.FieldByName("f2")
+				fmt.Println(f2.Tag)
+				v, ok := f2.Tag.Lookup("two")
+				fmt.Printf("%s, %t\n", v, ok)
+				f3, _ := t.FieldByName("f3")
+				fmt.Printf("%q\n", f3.Tag)
+				/*
+				// chan
+				//select_default()
+				/*
+					c := make(chan int)
+					quit := make(chan int)
+					go func() {
+						for i := 0; i < 10; i++ {
+							fmt.Println(<-c)
+						}
+						quit <- 0
+					}()
+					select_test(c, quit)
 	*/
 
 	/*
