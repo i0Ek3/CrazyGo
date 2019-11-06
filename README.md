@@ -4,7 +4,6 @@
 
 - [doc](#doc)
 - [code](#code)
-- [...](#)
 
 Of course, this repo will not include confidential part.
 
