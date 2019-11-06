@@ -1,4 +1,4 @@
-# Crazy Go.
+# Crazy Go
 
 > Cool stuff with Go.
 

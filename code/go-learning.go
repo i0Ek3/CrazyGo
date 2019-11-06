@@ -6,6 +6,7 @@ import (
 	//"reflect"
 	"runtime"
 	"time"
+	"sync"
 )
 
 func add_(x int, y int) int {
@@ -536,6 +537,49 @@ type M struct {
 	Name string
 	Age  int
 }
+
+// Mutex Lock & Semaphore
+// Semaphore
+var (
+	sema := make(chan struct{}, 1)
+	balance int
+)
+
+func Deposit-sema(amount int) {
+	sema<-struct{}{}
+	balance += amount
+	<-sema
+}
+
+func Balance-sema() int {
+	sema<-struct{}{}
+	b := balance
+	<-sema
+	return b
+}
+
+// Mutex Lock
+var (
+	mu sync.Mutex
+	balance_ int
+)
+
+func Deposit(amount int) {
+	mu.Lock()
+	defer mu.Unlock()
+	amount += balance_
+}
+
+func Balance() int {
+	mu.Lock()
+	//b := balance_
+	//mu.Unlock()
+	//return b
+	defer mu.Unlock()
+	return balance_
+}
+
+
 
 func main() {
 	var m1 *M
