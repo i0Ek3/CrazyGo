@@ -97,3 +97,14 @@
 2019/11/04 17:51:55.537 [M] [proc.go:203]  This is Emergency level log!
 2019/11/04 17:51:55.537 [N] [proc.go:203]  This is Notice level log!
 2019/11/04 17:51:55.537 [I] [beego-log.go:36]  This informational! 
+2019/11/08 20:25:40.359 [beego-log.go:19]  this is a msg of HTTP
+2019/11/08 20:25:40.359 [beego-log.go:20]  [HTTP] this is a msg of HTTP
+2019/11/08 20:25:40.360 [beego-log.go:21]  [ORM] this is a msg of ORM
+2019/11/08 20:25:40.360 [A] [proc.go:203]  This is Alert level log!
+2019/11/08 20:25:40.360 [I] [proc.go:203]  This is Inof level log!
+2019/11/08 20:25:40.360 [W] [proc.go:203]  This is Warn level log!
+2019/11/08 20:25:40.360 [E] [proc.go:203]  This is Error level log
+2019/11/08 20:25:40.360 [C] [proc.go:203]  This is Critical level log!
+2019/11/08 20:25:40.360 [M] [proc.go:203]  This is Emergency level log!
+2019/11/08 20:25:40.360 [N] [proc.go:203]  This is Notice level log!
+2019/11/08 20:25:40.360 [I] [beego-log.go:38]  This informational! 
