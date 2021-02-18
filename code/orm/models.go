@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/astaxie/beego/orm"
+	"github.com/astaxie/beego/orm" // orm: object relational mapping
 )
 
 type User struct {
